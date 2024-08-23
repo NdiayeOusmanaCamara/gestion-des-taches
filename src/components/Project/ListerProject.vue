@@ -17,7 +17,7 @@
           <td>{{ project.startDate }}</td>
           <td>{{ project.endDate }}</td>
           <td>
-            <i @click="voirDetails(index)" class="fas fa-eye text-info" style="cursor: pointer; margin-right: 8px;"></i>
+        
             <i @click="naviguerModifierProject(index)" class="fas fa-edit text-warning" style="cursor: pointer; margin-right: 8px;"></i>
             <i @click="supprimerProject(index)" class="fas fa-trash text-danger" style="cursor: pointer;"></i>
           </td>
@@ -30,15 +30,15 @@
       <table class="table table-primary table-borderless">
         <tr>
           <th>Nom</th>
-          <td>{{ projects[projectSelectionne].name }}</td>
+          <td>{{ projects[projectSelectionne].store.nom }}</td>
         </tr>
         <tr>
           <th>Date de début</th>
-          <td>{{ projects[projectSelectionne].startDate }}</td>
+          <td>{{ projects[projectSelectionne].store.startDate }}</td>
         </tr>
         <tr>
           <th>Date de fin</th>
-          <td>{{ projects[projectSelectionne].endDate }}</td>
+          <td>{{ projects[projectSelectionne].store.endDate }}</td>
         </tr>
       </table>
     </div>
@@ -48,6 +48,9 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
+import { useProjectsStore } from '@/store/useProjectsStore';
+
+const store =useProjectsStore()
 
 const projects = ref([]);
 const projectSelectionne = ref(null);
@@ -64,9 +67,6 @@ const supprimerProject = (index) => {
   projectSelectionne.value = null;
 };
 
-const voirDetails = (index) => {
-  projectSelectionne.value = index;
-};
 
 const naviguerAjouterProject = () => {
   router.push('/ajouterProject');

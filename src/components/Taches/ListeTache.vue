@@ -28,8 +28,7 @@
           <td>{{ tache.endDate }}</td>
           <td>{{ tache.projet }}</td>
          
-          <td>
-            <i @click="voirDetails(index)" class="fas fa-eye text-info" style="cursor: pointer; margin-right: 8px;"></i>
+          <td>   
             <i @click="naviguerModifierTache(index)" class="fas fa-edit text-warning" style="cursor: pointer; margin-right: 8px;"></i>
             <i @click="supprimerTache(index)" class="fas fa-trash text-danger" style="cursor: pointer;"></i>
           </td>
@@ -84,10 +83,6 @@ const supprimerTache = (index) => {
   taches.value.splice(index, 1);
   localStorage.setItem('taches', JSON.stringify(taches.value));
   tacheSelectionne.value = null;
-};
-
-const voirDetails = (index) => {
-  tacheSelectionne.value = index;
 };
 
 const naviguerAjouterTache = () => {

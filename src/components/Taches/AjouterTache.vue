@@ -3,16 +3,15 @@
     <h2>Ajouter une Nouvelle Tâche</h2>
     <form @submit.prevent="ajouterTache" class="mb-4">
       <div class="form-group d-flex w-100 gap-3">
-       
         <input v-model="nouveauTache.name" type="text" placeholder="Nom" class="form-control mt-2" required />
         <input v-model="nouveauTache.description" type="text" placeholder="Description" class="form-control mt-2" required />
-        
       </div>
-      <div class="form-group d-flex w-100 gap-3d-flex w-100 gap-3">
+      <div class="form-group d-flex w-100 gap-3">
         <input v-model="nouveauTache.startDate" type="date" placeholder="jj/mm/aaaa" class="form-control mt-2" required />
         <input v-model="nouveauTache.endDate" type="date" placeholder="jj/mm/aaaa" class="form-control mt-2" required />
-    
-       
+      </div>
+      <div class="form-group d-flex w-100 gap-3">
+        <input v-model="nouveauTache.projet" type="text" placeholder="Projet" class="form-control mt-2" required />
       </div>
       <div class="d-flex justify-content-between">
         <button type="submit" class="btn btn-success mt-2">Enregistrer</button>
@@ -25,12 +24,14 @@
 <script setup>
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
+import { useProjectsStore } from '@/store/useProjectsStore';
+const store = useProjectsStore()
 
-const nouveauTache = ref({ name: '', description: '', startDate: '', endDate: '' });
+const nouveauTache = ref({ name: '', description: '', startDate: '', endDate: '', projet: '' });
 const router = useRouter();
 
 const ajouterTache = () => {
-  if ( !nouveauTache.value.name || !nouveauTache.value.description || !nouveauTache.value.startDate || !nouveauTache.value.endDate ) {
+  if (!nouveauTache.value.name || !nouveauTache.value.description || !nouveauTache.value.startDate || !nouveauTache.value.endDate || !nouveauTache.value.projet) {
     alert('Veuillez remplir tous les champs');
     return;
   }
