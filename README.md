@@ -2,23 +2,20 @@
 
 ## Description
 
-Cette application de gestion de bibliothèque est conçue pour faciliter la gestion des livres, des membres, et des prêts au sein d'une bibliothèque. Développée avec Vue.js 3 et la Composition API, l'application offre une interface intuitive et réactive, tout en s'appuyant sur Vue Router pour une navigation fluide entre les différentes sections de l'application
+Cette application de gestion des tâches est conçue pour vous aider à organiser, suivre, et accomplir vos tâches quotidiennes de manière efficace. Développée avec Vue.js 3 et la Composition API, l'application offre une interface intuitive et réactive, tout en s'appuyant sur Vue Router pour une navigation fluide entre les différentes sections de l'application.
 
 
 ## Fonctionnalités principales
 
-- **Gestion des livres** : 
-  - Ajouter, modifier et supprimer des livres.
-  - Chaque livre contient des informations détaillées telles que le titre, l'auteur et la disponibilité.
+- **Gestion des taches** : 
+  - Ajouter, modifier et supprimer des taches.
+  - Chaque tâche peut être modifier ou supprimer.
+  - Gestion des priorités pour mieux organiser votre emploi du temps.
   
-- **Gestion des membres** : 
-  - Suivre les membres inscrits à la bibliothèque.
-  - Gestion des informations de contact et de l'historique des emprunts.
-  
-- **Gestion des prêts** :
-  - Enregistrer et gérer les prêts de livres.
-  - Suivi des dates d'emprunt et de retour.
-  - Identification des livres disponibles ou en retard.
+- **Gestion de l'état avec Pinia**:
+Centralisation de l'état de l'application pour une gestion plus cohérente des données.
+Mise à jour réactive des composants en fonction des changements d'état.
+
 
 L'application utilise **Bootstrap** pour une mise en page élégante et responsive, garantissant une expérience utilisateur optimale sur différents appareils.
 
@@ -27,15 +24,16 @@ L'application utilise **Bootstrap** pour une mise en page élégante et responsi
 - **Vue.js 3** avec la **Composition API**
 - **Vue Router** pour la gestion de la navigation
 - **Bootstrap 5** pour le design et la mise en page responsive
+-**Pinia** pour la gestion de l'état
 - **Local Storage** pour le stockage des données
 
 ## Structure de l'Application
 
-- **Navbar** : Une barre de navigation pour basculer entre les sections "Livres", "Membres" et "Prêts".
+- **Navbar** : Une barre de navigation pour basculer entre les sections "Taches" et "Projet".
 - **Pages** : 
-  - Une page pour gérer les livres.
-  - Une page pour gérer les membres.
-  - Une page pour gérer les prêts.
+  - Une page pour gérer les taches.
+  - Une page pour gérer les projet.
+  
   
 - **Composants réutilisables** : L'application utilise des composants Vue.js modulaires et réutilisables pour maintenir un code propre et efficace.
 
@@ -43,11 +41,11 @@ L'application utilise **Bootstrap** pour une mise en page élégante et responsi
 
 1. **Cloner le repository** :
    ```bash
-   git clone https://github.com/votre-repository/gestion-bibliotheque.git
+   https://github.com/NdiayeOusmanaCamara/gestion-des-taches.git
    
 2. **Naviguer dans le répertoire du projet**:
     ```bash
-     cd gestion-bibliotheque
+     cd gestion-des-taches
 3. **Installer les dépendances**:
    
     ```sh
